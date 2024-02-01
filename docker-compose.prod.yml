@@ -1,0 +1,44 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    expose:
+      - "5433"
+    ports:
+      - "5433:5433"
+    command: -p 5433
+
+  backend:
+    build:
+      context: ./strapi
+      dockerfile: Dockerfile.prod
+    ports:
+      - 1337:1337
+    depends_on:
+      - db
+    env_file: ./strapi/.env
+    volumes:
+      - ./strapi/config:/strapi-app/config
+      - ./strapi/src:/strapi-app/src
+      - ./strapi/package.json:/strapi-app/package.json
+      - ./strapi/yarn.lock:/strapi-app/yarn.lock
+      - ./strapi/.env:/strapi-app/.env
+      - ./strapi/public:/strapi-app/public
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./nuxt
+      dockerfile: Dockerfile.prod
+    tmpfs: /tmp
+    ports:
+      - 8585:8585
+    depends_on:
+      - backend
+    env_file: ./nuxt/.env
+    restart: unless-stopped

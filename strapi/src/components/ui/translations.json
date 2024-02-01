@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_ui_translations",
+  "info": {
+    "displayName": "Translations",
+    "icon": "earth",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "test": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

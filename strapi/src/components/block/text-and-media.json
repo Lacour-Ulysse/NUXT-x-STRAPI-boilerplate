@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_components_text_and_medias",
+  "info": {
+    "displayName": "Text & Media",
+    "icon": "puzzle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "media_side": {
+      "type": "enumeration",
+      "enum": ["left", "right"],
+      "default": "left",
+      "required": false
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "text": {
+      "type": "richtext",
+      "required": false
+    }
+  }
+}

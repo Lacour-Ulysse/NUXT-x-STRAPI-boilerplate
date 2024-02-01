@@ -1,0 +1,9 @@
+{
+  "site_title": "Nuxt x Strapi",
+  "site_description": "Description",
+  "nothing_found": "No results...",
+  "error_message": "Oups, an error happened...",
+  "error_404": "Oups, page not found !",
+  "error_503": "Website under maintenance, sorry we'll be back very soon !",
+  "test": "Menu - EN"
+}

@@ -1,0 +1,145 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "vitest/globals"
+    ],
+    // Adapt .nuxt/tsconfig.json paths so aliases works in vscode too
+    "baseUrl": ".",
+    "paths": {
+      "~": [
+        "."
+      ],
+      "~/*": [
+        "./*"
+      ],
+      "@": [
+        "."
+      ],
+      "@/*": [
+        "./*"
+      ],
+      "~~": [
+        "."
+      ],
+      "~~/*": [
+        "./*"
+      ],
+      "@@": [
+        "."
+      ],
+      "@@/*": [
+        "./*"
+      ],
+      "assets": [
+        "./assets"
+      ],
+      "assets/*": [
+        "./assets/*"
+      ],
+      "public": [
+        "./public"
+      ],
+      "public/*": [
+        "./public/*"
+      ],
+      "#app": [
+        "./node_modules/nuxt/dist/app"
+      ],
+      "#app/*": [
+        "./node_modules/nuxt/dist/app/*"
+      ],
+      "vue-demi": [
+        "./node_modules/nuxt/dist/app/compat/vue-demi"
+      ],
+      "#apollo": [
+        "./.nuxt/apollo"
+      ],
+      "#color-mode-options": [
+        "./.nuxt/color-mode-options"
+      ],
+      "#image": [
+        "./node_modules/@nuxt/image/dist/runtime"
+      ],
+      "#image/*": [
+        "./node_modules/@nuxt/image/dist/runtime/*"
+      ],
+      "vue-i18n": [
+        "./node_modules/vue-i18n/dist/vue-i18n"
+      ],
+      "@intlify/shared": [
+        "./node_modules/@intlify/shared/dist/shared"
+      ],
+      "@intlify/message-compiler": [
+        "./node_modules/@intlify/message-compiler/dist/message-compiler"
+      ],
+      "@intlify/vue-router-bridge": [
+        "./node_modules/@intlify/vue-router-bridge/lib/index"
+      ],
+      "@intlify/vue-i18n-bridge": [
+        "./node_modules/@intlify/vue-i18n-bridge/lib/index"
+      ],
+      "vue-i18n-routing": [
+        "./node_modules/vue-i18n-routing/dist/vue-i18n-routing"
+      ],
+      "#i18n": [
+        "./node_modules/@nuxtjs/i18n/dist/runtime/composables"
+      ],
+      "#robots": [
+        "./.nuxt/robots"
+      ],
+      "pinia": [
+        "./node_modules/pinia/dist/pinia"
+      ],
+      "#vue-router": [
+        "./.nuxt/vue-router"
+      ],
+      "#imports": [
+        "./.nuxt/imports"
+      ],
+      "#build": [
+        "./.nuxt"
+      ],
+      "#build/*": [
+        "./.nuxt/*"
+      ],
+      "#components": [
+        "./.nuxt/components"
+      ],
+      "#ui": [
+        "./node_modules/@nuxt/ui/dist/runtime"
+      ],
+      "#ui/*": [
+        "./node_modules/@nuxt/ui/dist/runtime/*"
+      ],
+      "#ui-colors": [
+        "./.nuxt/ui.colors"
+      ],
+      "@intlify/core-base": [
+        "./node_modules/@intlify/core-base/dist/core-base"
+      ],
+      "@intlify/core": [
+        "./node_modules/@intlify/core/dist/core.node"
+      ],
+      "@intlify/utils/h3": [
+        "./node_modules/@intlify/utils/dist/h3"
+      ],
+      "ufo": [
+        "./node_modules/ufo/dist/index"
+      ],
+      "is-https": [
+        "./node_modules/is-https/dist/index"
+      ],
+      "#icon-collections": [
+        "./.nuxt/icon-collections"
+      ],
+      "#tailwind-config": [
+        "./.nuxt/tailwind.config"
+      ],
+      "#tailwind-config/*": [
+        "./.nuxt/tailwind.config/*"
+      ],
+    }
+  }
+}

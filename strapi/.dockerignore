@@ -1,0 +1,17 @@
+.tmp/
+.cache/
+.git
+build/
+node_modules
+.env
+data/
+backup/
+.git
+.vscode
+.dockerignore
+.docker-compose*
+Dockerfile*
+README.md
+*.log*
+.env.example
+.DS_Store

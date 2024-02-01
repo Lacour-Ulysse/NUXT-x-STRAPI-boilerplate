@@ -1,0 +1,16 @@
+/.nuxt
+/.output
+/node_modules
+*.log*
+.nitro
+.cache
+.env.example
+.env.prod
+.git
+.vscode
+.dockerignore
+.docker-compose*
+Dockerfile*
+README.md
+dist
+.DS_Store

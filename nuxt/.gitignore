@@ -1,0 +1,33 @@
+# Nuxt dev/build outputs
+.output
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+yarn.lock
+*.lock
+
+# Logs
+*.log
+!logs/access.log
+!logs/error.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Vitest
+coverage
+
+# Local env files
+.env
+
+# Sentry Config File
+.env.sentry-build-plugin
+
+# Sentry Config File
+.env.sentry-build-plugin

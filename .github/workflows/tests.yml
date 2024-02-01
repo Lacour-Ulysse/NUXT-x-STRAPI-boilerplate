@@ -1,0 +1,46 @@
+name: Vitest check
+
+run-name: Run tests 🕵🏻‍♂️
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    types:
+      - closed
+    branches: [main, staging]
+
+defaults:
+  run:
+    working-directory: ./nuxt
+
+jobs:
+  run_tests:
+    name: Run all tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Clean install of dependencies
+        run: rm -rf node_modules && yarn install --frozen-lockfile
+
+      - name: Run tests
+        run: yarn test
+
+      - name: Trigger deployment
+        if: success() && github.ref == 'refs/heads/main'
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT }}
+          repository: ${{ github.repository }}
+          event-type: trigger-deploy
