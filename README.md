@@ -66,13 +66,23 @@ You'll have a few secrets to add to your github repository for actions to work.
 
 _For releases :_
 
-`SENTRY_ORG`, `SENTRY_PROJECT_NUXT`, `SENTRY_PROJECT_STRAPI`, `SENTRY_AUTH_TOKEN_NUXT`, `SENTRY_AUTH_TOKEN_STRAPI`
+`SENTRY_ORG`
+`SENTRY_PROJECT_NUXT`
+`SENTRY_PROJECT_STRAPI`
+`SENTRY_AUTH_TOKEN_NUXT`
+`SENTRY_AUTH_TOKEN_STRAPI`
 
 _For Deploy :_
 
 See [tutorial](https://www.programonaut.com/how-to-deploy-a-git-repository-to-a-server-using-github-actions/) and create a PAT on github with repo & workflow scopes.
 
-`PAT`, `PROD_BRANCH`, `STAGING_BRANCH`, `SSH_PRIVATE_KEY`, `SSH_USER`, `SSH_HOST`, `WORK_DIR`
+`PAT`
+`PROD_BRANCH`
+`STAGING_BRANCH`
+`SSH_PRIVATE_KEY`
+`SSH_USER`
+`SSH_HOST`
+`WORK_DIR`
 
 ### `tests` :
 
