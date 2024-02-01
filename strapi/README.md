@@ -17,7 +17,8 @@ yarn init-data
 
 OR
 
-yarn strapi import -f strapi-export.tar.gz --force
+# Prod command
+sudo docker exec container_ID yarn init-data
 ```
 
 Create API token : `Settings -> Global Settings -> API Tokens -> Create new API token`
