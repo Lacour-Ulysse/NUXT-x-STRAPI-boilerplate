@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "website_informations",
+  "info": {
+    "singularName": "website-information",
+    "pluralName": "website-informations",
+    "displayName": "Website informations",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "socials.seo",
+      "required": true
+    },
+    "Translations": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "ui.translations",
+      "required": true
+    }
+  }
+}

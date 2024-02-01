@@ -1,0 +1,3 @@
+<template>
+  <TranslationsComponent />
+</template>

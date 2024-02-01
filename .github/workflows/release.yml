@@ -1,0 +1,103 @@
+name: Release
+
+run-name: New release 🚀
+
+on:
+  repository_dispatch:
+    types: [trigger-release]
+
+jobs:
+  generate_git_tags:
+    permissions: write-all
+    name: "Github Tags"
+    runs-on: ubuntu-latest
+    outputs:
+      output_new_tag: ${{ steps.taggerFinal.outputs.new_tag }}
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+
+      - name: Generate finale version
+        id: taggerFinal
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+
+      - name: Echo new tag
+        run: echo "Next tag version is ${{ steps.taggerFinal.outputs.new_tag }}"
+
+  generate_git_release:
+    needs: generate_git_tags
+    name: "Github Release"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Release action
+        uses: ncipollo/release-action@v1.10.0
+        with:
+          tag: ${{ needs.generate_git_tags.outputs.output_new_tag }}
+          token: ${{ secrets.PAT }}
+
+  generate_sentry_release_STRAPI:
+    needs: [generate_git_tags, generate_git_release]
+    name: Sentry Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Split Repo Name
+        uses: jungwinter/split@v2
+        id: split_repo_name
+        with:
+          msg: ${{ github.repository }}
+          separator: "/"
+          maxsplit: 1
+      - name: Echo Repo Name
+        run: echo ${{ steps.split_repo_name.outputs._1 }}
+      - name: Sentry Release
+        uses: getsentry/action-release@v1.2.0
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN_STRAPI }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT_STRAPI }}
+        with:
+          environment: production
+          version: "${{ steps.split_repo_name.outputs._1 }}@${{ needs.generate_git_tags.outputs.output_new_tag }}"
+          sourcemaps: "./strapi/"
+          url_prefix: "~"
+
+  generate_sentry_release_NUXT:
+    needs: [generate_git_tags, generate_git_release]
+    name: Nuxt Sentry Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Split Repo Name
+        uses: jungwinter/split@v2
+        id: split_repo_name
+        with:
+          msg: ${{ github.repository }}
+          separator: "/"
+          maxsplit: 1
+      - name: Echo Repo Name
+        run: echo ${{ steps.split_repo_name.outputs._1 }}
+      - name: Sentry Release
+        uses: getsentry/action-release@v1.2.0
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN_NUXT }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT_NUXT }}
+        with:
+          environment: production
+          version: "${{ steps.split_repo_name.outputs._1 }}@${{ needs.generate_git_tags.outputs.output_new_tag }}"
+          sourcemaps: "./nuxt/"
+          url_prefix: "~"

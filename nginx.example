@@ -1,0 +1,14 @@
+server {
+    server_name strapi.ulysselacour.com www.strapi.ulysselacour.com;
+
+    access_log /home/eljovial/strapi_nuxt/NUXT-x-STRAPI/strapi/logs/access.log;
+    error_log /home/eljovial/strapi_nuxt/NUXT-x-STRAPI/strapi/logs/error.log error;
+
+    location / {
+        proxy_pass http://172.30.0.4:8585; # Replace with the actual IP address of your Docker container
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

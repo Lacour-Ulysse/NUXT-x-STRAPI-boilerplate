@@ -1,0 +1,36 @@
+# Use an official Node.js runtime as the base image
+FROM node:18.18-alpine3.17
+
+# Install/update basics linux depedencies
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev git
+
+# Specify dev env
+ARG NODE_ENV=development
+ENV NODE_ENV=${NODE_ENV}
+
+# Set the working directory in the container
+WORKDIR /strapi-app
+
+# Copy the package.json and yarn.lock to the container
+COPY package*.json yarn.lock ./
+
+# Install dependencies
+RUN yarn global add node-gyp
+RUN yarn config set network-timeout 600000 -g && yarn install
+ENV PATH /strapi-app/node_modules/.bin:$PATH
+
+# Set the working directory in the app
+WORKDIR /strapi-app
+
+# Copy the rest of the application code to the container
+COPY . .
+
+# Make sure typescript config file is added
+COPY ./tsconfig.json ./tsconfig.json
+
+# Run the app
+RUN chown -R node:node /strapi-app
+USER node
+RUN ["yarn", "build"]
+EXPOSE 1337
+CMD ["yarn", "develop"]
