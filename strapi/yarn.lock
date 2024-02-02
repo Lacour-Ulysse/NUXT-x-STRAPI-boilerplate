@@ -2349,6 +2349,25 @@
     prop-types "^15.8.1"
     react-remove-scroll "^2.5.6"
 
+"@strapi/design-system@1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@strapi/design-system/-/design-system-1.13.0.tgz#6501c4e48941c16367ec6c8e0c0f5b9849530bed"
+  integrity sha512-Z9wZyqzRKNXKNkeNAwSLYOHshXW6UmqsOvaeUiUDfE77hvsJOzR60nLDDfo9pzQ/24t9332NWUUa24mSXFt97Q==
+  dependencies:
+    "@codemirror/lang-json" "^6.0.1"
+    "@floating-ui/react-dom" "^2.0.2"
+    "@internationalized/date" "^3.5.0"
+    "@internationalized/number" "^3.3.0"
+    "@radix-ui/react-dismissable-layer" "^1.0.5"
+    "@radix-ui/react-dropdown-menu" "^2.0.6"
+    "@radix-ui/react-focus-scope" "1.0.4"
+    "@strapi/ui-primitives" "^1.13.0"
+    "@uiw/react-codemirror" "^4.21.20"
+    aria-hidden "^1.2.3"
+    compute-scroll-into-view "^3.1.0"
+    prop-types "^15.8.1"
+    react-remove-scroll "^2.5.7"
+
 "@strapi/design-system@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@strapi/design-system/-/design-system-1.9.0.tgz#fbccd17f74cba0262c4aabbfdd8d1e8325f64e79"
@@ -2452,6 +2471,22 @@
     react-query "3.39.3"
     react-select "5.7.0"
 
+"@strapi/helper-plugin@4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.15.0.tgz#176881c832287a4bd3117250e8cd482f75c47833"
+  integrity sha512-PLX/zucxFsNHOrkSguIps9JvQytKT5gBGhRE/L0mViJ7Z3a0cN5NY9f3eL08BTOwnkhI4NkptisO50r6Uej4+Q==
+  dependencies:
+    axios "1.5.0"
+    date-fns "2.30.0"
+    formik "2.4.0"
+    immer "9.0.19"
+    lodash "4.17.21"
+    qs "6.11.1"
+    react-helmet "6.1.0"
+    react-intl "6.4.1"
+    react-query "3.39.3"
+    react-select "5.7.0"
+
 "@strapi/helper-plugin@^4.6.0":
   version "4.15.5"
   resolved "https://registry.yarnpkg.com/@strapi/helper-plugin/-/helper-plugin-4.15.5.tgz#f9d218cb53a81e7a169fa1b23b7d961ad1638cdf"
@@ -2472,6 +2507,11 @@
   version "1.12.2"
   resolved "https://registry.yarnpkg.com/@strapi/icons/-/icons-1.12.2.tgz#a231074b2776e651a7317a85355d40b070f6c20d"
   integrity sha512-28LX0DCh8hGK2PRg+eXuBGHOkupfv3vD9lmZ/yCoyVdMWdURDdJCtc+KV+vCG++dcwvSbHw78aUNYfwaejDB7Q==
+
+"@strapi/icons@1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@strapi/icons/-/icons-1.13.0.tgz#0020560b5bed008ddc39aa177b264cb3bebe8b67"
+  integrity sha512-bmFJvyM75nuVyJVq4bgHxRYwu9eEkmRKNipEb/GBTBvvkHGN0GTHLOAedGpKGvB7RwcclbaymOP7oBlxahOmsw==
 
 "@strapi/icons@1.9.0":
   version "1.9.0"
@@ -2550,17 +2590,17 @@
     react-query "3.39.3"
     yup "0.32.9"
 
-"@strapi/plugin-graphql@4.13.5":
-  version "4.13.5"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-4.13.5.tgz#1ff0c50ee95f1023d489a539ace70cdf451d1902"
-  integrity sha512-vWgDNyNuC5lRPFvk8vh9Z45UQb76LKAKPHkLFn8BioAdSwFApZctfxus0LpC08cex3Z2zKF3UrF6HoH7TIahWA==
+"@strapi/plugin-graphql@4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@strapi/plugin-graphql/-/plugin-graphql-4.15.0.tgz#b197472fade627a635fbb54663a96d14a66a61a8"
+  integrity sha512-WKHv1c2sALeQQFhJKH2bDY0X04TnP2wNrfrGNUBUFeFhgI5HDfN2r0WMvSSbxgnC4AW4KBXQVvTbGXdv0QEBUQ==
   dependencies:
     "@graphql-tools/schema" "8.5.1"
     "@graphql-tools/utils" "^8.13.1"
-    "@strapi/design-system" "1.9.0"
-    "@strapi/helper-plugin" "4.13.5"
-    "@strapi/icons" "1.9.0"
-    "@strapi/utils" "4.13.5"
+    "@strapi/design-system" "1.13.0"
+    "@strapi/helper-plugin" "4.15.0"
+    "@strapi/icons" "1.13.0"
+    "@strapi/utils" "4.15.0"
     apollo-server-core "3.12.1"
     apollo-server-koa "3.10.0"
     glob "7.2.3"
@@ -2782,10 +2822,49 @@
     aria-hidden "^1.2.3"
     react-remove-scroll "^2.5.7"
 
+"@strapi/ui-primitives@^1.13.0":
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/@strapi/ui-primitives/-/ui-primitives-1.14.1.tgz#f4100f68874754088322bdb6da98a206fa9fbc2d"
+  integrity sha512-AmwyfZuazN7J1AgVf7i7oly+zwcJdWFqh/UCd3uPtoonnPmdCIRjkK8aBWlU9M+k3277FGIaCHOwNHiMSiBbbA==
+  dependencies:
+    "@radix-ui/number" "^1.0.1"
+    "@radix-ui/primitive" "^1.0.1"
+    "@radix-ui/react-collection" "1.0.3"
+    "@radix-ui/react-compose-refs" "^1.0.1"
+    "@radix-ui/react-context" "^1.0.1"
+    "@radix-ui/react-direction" "1.0.1"
+    "@radix-ui/react-dismissable-layer" "^1.0.5"
+    "@radix-ui/react-focus-guards" "1.0.1"
+    "@radix-ui/react-focus-scope" "1.0.4"
+    "@radix-ui/react-id" "^1.0.1"
+    "@radix-ui/react-popper" "^1.1.3"
+    "@radix-ui/react-portal" "^1.0.4"
+    "@radix-ui/react-primitive" "^1.0.3"
+    "@radix-ui/react-slot" "^1.0.2"
+    "@radix-ui/react-use-callback-ref" "^1.0.1"
+    "@radix-ui/react-use-controllable-state" "^1.0.1"
+    "@radix-ui/react-use-layout-effect" "1.0.1"
+    "@radix-ui/react-use-previous" "^1.0.1"
+    "@radix-ui/react-visually-hidden" "^1.0.3"
+    aria-hidden "^1.2.3"
+    react-remove-scroll "^2.5.7"
+
 "@strapi/utils@4.13.5":
   version "4.13.5"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.13.5.tgz#286a87d8d6d2d7f5d7d363a38d8fe3e7e3be379b"
   integrity sha512-ZqRcOesDyzhlWJ/L+fqqH5GZrx4RkiereqabL2mEySANgn/B+ymoT0VS5SojBOj1Skray/90ubEtozgO+w56kg==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.30.0"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
+
+"@strapi/utils@4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.15.0.tgz#1f4cf0343b7dbc91afa0907dd5afb732b1c7efed"
+  integrity sha512-8X7YNGpL7OdJOF3Sx3gnnvIt+omKPiZqoqCvLIfVxbpt1o597cmaVaBHeCWAYBkd9xqmdnalvtGmEjMtjS+ILw==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"
@@ -3490,7 +3569,7 @@
     "@codemirror/state" "^6.0.0"
     "@codemirror/view" "^6.0.0"
 
-"@uiw/react-codemirror@^4.21.19", "@uiw/react-codemirror@^4.21.21", "@uiw/react-codemirror@^4.21.9":
+"@uiw/react-codemirror@^4.21.19", "@uiw/react-codemirror@^4.21.20", "@uiw/react-codemirror@^4.21.21", "@uiw/react-codemirror@^4.21.9":
   version "4.21.21"
   resolved "https://registry.yarnpkg.com/@uiw/react-codemirror/-/react-codemirror-4.21.21.tgz#986b18dbd6dc69aa470fc3d4e47b89b504af6778"
   integrity sha512-PaxBMarufMWoR0qc5zuvBSt76rJ9POm9qoOaJbqRmnNL2viaF+d+Paf2blPSlm1JSnqn7hlRjio+40nZJ9TKzw==
