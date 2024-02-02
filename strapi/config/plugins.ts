@@ -46,4 +46,10 @@ module.exports = ({ env }) => ({
   "import-export-entries": {
     enabled: true,
   },
+
+  // Custom dashboard
+  dashbored: {
+    enabled: true,
+    resolve: "./src/plugins/dashbored",
+  },
 });
