@@ -10,11 +10,14 @@
     "strapi": "strapi",
     "types": "graphql-codegen --config codegen.yml",
     "init-data": "strapi import -f strapi-export.tar.gz --force",
-    "strapi-keys": "strapi-keys"
+    "strapi-keys": "strapi-keys",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
-    "@graphql-codegen/typescript": "^4.0.1"
+    "@graphql-codegen/typescript": "^4.0.1",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0"
   },
   "dependencies": {
     "@creazy231/strapi-plugin-apollo-sandbox": "^0.0.13",

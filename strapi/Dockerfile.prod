@@ -14,6 +14,9 @@ WORKDIR /strapi-app
 # Copy the package.json and yarn.lock to the container
 COPY package*.json yarn.lock ./
 
+# Copy patches
+COPY ./patches ./patches
+
 # Install dependencies
 RUN yarn global add node-gyp
 RUN yarn config set network-timeout 600000 -g && yarn install --production
