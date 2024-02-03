@@ -124,9 +124,9 @@ To set up Personal Access Token (PAT), create it ([documentation](https://docs.g
 nano ~/.bashrc
 ```
 
-Add to bashrc file :
+Add your token to bashrc file :
 
-> export PAT="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"
+> export PAT="githubtoken"
 
 Quit and save. Restart terminal and check with :
 
