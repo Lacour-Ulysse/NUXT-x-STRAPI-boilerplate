@@ -15,6 +15,7 @@ const LogoContainer = styled(Box)`
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 2;
 
   img {
     width: ${150 / 16}rem;
