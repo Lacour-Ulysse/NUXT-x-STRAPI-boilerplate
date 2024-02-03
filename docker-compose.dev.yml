@@ -28,6 +28,7 @@ services:
       - ./strapi/yarn.lock:/strapi-app/yarn.lock
       - ./strapi/.env:/strapi-app/.env
       - ./strapi/public:/strapi-app/public
+      - ./strapi/patches:/strapi-app/patches
     restart: unless-stopped
 
   frontend:

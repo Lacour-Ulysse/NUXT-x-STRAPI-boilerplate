@@ -29,6 +29,12 @@ Copy paste new token to Nuxt env variable STRAPI_TOKEN and reload containers.
 
 # Plugins and utils infos :
 
+## Custome Homepage/Dashboard
+
+Created with a custom plugin thanks to this [article](https://www.dgrebb.com/post/strapi-cms-admin-panel-customization-post-version-4-15-0/), it can be edited in `/src/plugins/dashbored`.
+
+And also `node_modules/@strapi/admin/admin/src/pages/HomePage/index.js` has been edited and is tracked thanks to patch-package.
+
 ## Import/export config & data
 
 Inside strapi container :

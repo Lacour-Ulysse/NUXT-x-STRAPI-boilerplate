@@ -1,1 +1,13 @@
-{}
+{
+  "plugin.dashbored.posts.title": "Posts",
+  "plugin.dashbored.posts.subtitle": "Ajouter/modifier les posts",
+
+  "plugin.dashbored.pages.title": "Pages",
+  "plugin.dashbored.pages.subtitle": "Ajouter/modifier les pages",
+
+  "plugin.dashbored.post-categories.title": "Catégories de posts",
+  "plugin.dashbored.post-categories.subtitle": "Ajouter/modifier les catégories",
+
+  "plugin.dashbored.homepage.title": "Informations",
+  "plugin.dashbored.homepage.subtitle": "Modifier les informations du site"
+}
