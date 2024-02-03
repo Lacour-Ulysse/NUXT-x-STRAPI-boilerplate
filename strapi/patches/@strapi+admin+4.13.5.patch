@@ -1,12 +1,49 @@
+diff --git a/node_modules/@strapi/admin/admin/src/components/LeftMenu/index.js b/node_modules/@strapi/admin/admin/src/components/LeftMenu/index.js
+index c259beb..bd40daf 100644
+--- a/node_modules/@strapi/admin/admin/src/components/LeftMenu/index.js
++++ b/node_modules/@strapi/admin/admin/src/components/LeftMenu/index.js
+@@ -142,18 +142,21 @@ const LeftMenu = ({ generalSectionLinks, pluginsSectionLinks }) => {
+           >
+             {pluginsSectionLinks.map((link) => {
+               const Icon = link.icon;
++              {/* PATCH : Hide Dashbored link from plugins menu */}
++              if (link.intlLabel.defaultMessage !== "Dashbored") {
++                return (
++                  <NavLink
++                    as={RouterNavLink}
++                    to={link.to}
++                    key={link.to}
++                    icon={<Icon />}
++                    onClick={() => handleClickOnLink(link.to)}
++                  >
++                    {formatMessage(link.intlLabel)}
++                  </NavLink>
++                );
++              }
+ 
+-              return (
+-                <NavLink
+-                  as={RouterNavLink}
+-                  to={link.to}
+-                  key={link.to}
+-                  icon={<Icon />}
+-                  onClick={() => handleClickOnLink(link.to)}
+-                >
+-                  {formatMessage(link.intlLabel)}
+-                </NavLink>
+-              );
+             })}
+           </NavSection>
+         ) : null}
 diff --git a/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js b/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js
-index a22f746..d95f091 100644
+index a22f746..6ccf33e 100644
 --- a/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js
 +++ b/node_modules/@strapi/admin/admin/src/pages/HomePage/index.js
-@@ -2,91 +2,14 @@
-  * HomePage
+@@ -3,90 +3,15 @@
   *
   */
--
+ 
++// PATCH : redirect to Dashbored homepage plugin
 +import { Redirect } from 'react-router-dom';
  import React, { useMemo } from 'react';
  

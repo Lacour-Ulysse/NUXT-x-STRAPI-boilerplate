@@ -9,6 +9,16 @@ import styled from "styled-components";
 
 const BlockLink = styled.a`
   text-decoration: none;
+  &:hover > div:first-child {
+    transform: scale(1.015);
+    transition: transform 0.35s;
+  }
+
+  & > div:first-child {
+    flex-wrap: wrap;
+    gap: 1rem 0rem;
+    transition: transform 0.15s;
+  }
 `;
 
 const StyledFeather = styled(Feather)`
@@ -66,6 +76,7 @@ const ContentBlocks = () => {
                 "/content-manager/collectionType/api::post.post?page=1&pageSize=100"
               );
             }}
+            className="homepage-link"
           >
             <ContentBox
               title={formatMessage({
