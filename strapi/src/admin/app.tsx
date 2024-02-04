@@ -20,10 +20,23 @@ export default {
       en: {
         "Auth.form.welcome.title": "Welcome!",
         "Auth.form.welcome.subtitle": "Log in to your account",
+        "content-manager.components.LeftMenu.collection-types": "Collections",
+        "content-manager.components.LeftMenu.single-types": "Uniques",
       },
       fr: {
+        "content-manager.components.LeftMenu.collection-types": "Collections",
+        "content-manager.components.LeftMenu.single-types": "Uniques",
+        "Post categories": "Catégories",
+        "Post category": "Catégorie",
         Users: "Utilisateur.ice.s",
         User: "Utilisateur.ice",
+        "Website informations": "Informations",
+        "Website information": "Information",
+
+        Rank: "Rang",
+        Title: "Titre",
+        Slug: "Slug",
+        Username: "Identifiant",
       },
     },
 
