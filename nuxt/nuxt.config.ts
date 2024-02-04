@@ -5,7 +5,15 @@ import { sentryVitePlugin } from "@sentry/vite-plugin";
 export default defineNuxtConfig({
   // Env variables
   runtimeConfig: {
+    strapi: {
+      // nuxt/strapi options available server-side
+      url: process.env.SERVER_SIDE_GRAPHQL_URL,
+    },
     public: {
+      strapi: {
+        // nuxt/strapi options available client-side
+        url: process.env.STRAPI_SITE_URL,
+      },
       STRAPI_SITE_URL: process.env.STRAPI_SITE_URL,
       STRAPI_TOKEN: process.env.STRAPI_TOKEN,
       DEV_MODE: !!(process.env.NODE_ENV === "development"),
@@ -56,6 +64,8 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     // Nuxt test utils
     "@nuxt/test-utils/module",
+    // Nuxtjs/Strapi
+    "@nuxtjs/strapi",
   ],
 
   // Robots
@@ -196,5 +206,13 @@ export default defineNuxtConfig({
       cookieKey: "i18n_redirected",
       redirectOn: "root",
     },
+  },
+
+  strapi: {
+    prefix: "/api",
+    admin: "/admin",
+    version: "v4",
+    cookie: {},
+    cookieName: "strapi_jwt",
   },
 });
