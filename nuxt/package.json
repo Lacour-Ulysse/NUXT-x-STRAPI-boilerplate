@@ -59,7 +59,7 @@
     "vue3-carousel": "^0.3.1"
   },
   "resolutions": {
-    "vue": "3.4.5"
+    "vue": "3.3.13"
   },
   "engines": {
     "node": ">=18.0.0 <=19.x.x",

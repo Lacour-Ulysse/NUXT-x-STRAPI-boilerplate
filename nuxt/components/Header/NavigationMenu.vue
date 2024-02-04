@@ -25,6 +25,10 @@ import type { Query, PageEntityResponseCollection } from "@/types/Strapi";
 const localPath = useLocalePath();
 const locale = ref(useI18n().locale);
 
+// Auth/Preview mode
+const user = useStrapiUser();
+const publicationState = user.value ? "PREVIEW" : "LIVE";
+
 ////// Fetch all pages from strapi :
 
 // Query variables
@@ -34,6 +38,7 @@ const strapiPages = ref<PageEntityResponseCollection>();
 async function fetchStrapiPages() {
   const { data, error } = await useAsyncQuery<Query>(GET_ALL_PAGES, {
     locale: locale.value,
+    publicationState: publicationState,
   });
 
   // Get pages data

@@ -8,6 +8,13 @@
 </template>
 
 <script setup lang="ts">
+// Utils
+import { setMeta } from "@/utils/setMeta";
+
+// Dynamic components
+import { defineAsyncComponent } from "vue";
+let blocks: any = [];
+
 // Graphql query
 import { GET_STRAPI_PAGE } from "@/gql/PageBySlug";
 
@@ -24,12 +31,9 @@ const runtimeConfig = useRuntimeConfig();
 const { t } = useI18n();
 const locale = ref(useI18n().locale);
 
-// Utils
-import { setMeta } from "@/utils/setMeta";
-
-// Dynamic components
-import { defineAsyncComponent } from "vue";
-let blocks: any = [];
+// Auth/Preview mode
+const user = useStrapiUser();
+const publicationState = user.value ? "PREVIEW" : "LIVE";
 
 ////// Fetch all pages from strapi :
 
@@ -93,6 +97,7 @@ const handleQuery = (data: any, error: any) => {
 const { data, error } = await useAsyncQuery<Query>(GET_STRAPI_PAGE, {
   locale: locale.value,
   slug: route.params.pagePath,
+  publicationState: publicationState,
 });
 handleQuery(data, error);
 
@@ -103,6 +108,7 @@ watch(
     const { data, error } = await useAsyncQuery<Query>(GET_STRAPI_PAGE, {
       locale: locale.value,
       slug: route.params.pagePath,
+      publicationState: publicationState,
     });
     handleQuery(data, error);
   }
