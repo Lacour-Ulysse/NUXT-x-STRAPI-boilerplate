@@ -25,6 +25,10 @@ const { t } = useI18n();
 const locale = ref(useI18n().locale);
 const localPath = useLocalePath();
 
+// Auth/Preview mode
+const user = useStrapiUser();
+const publicationState = user.value ? "PREVIEW" : "LIVE";
+
 ////// Fetch all categories from strapi :
 
 // Query variables
@@ -35,6 +39,7 @@ async function fetchCategories() {
   try {
     const { data, error } = await useAsyncQuery<Query>(GET_ALL_CATEGORIES, {
       locale: locale.value,
+      publicationState: publicationState,
     });
 
     // Graphql error + not found handling

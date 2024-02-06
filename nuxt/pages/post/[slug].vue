@@ -5,6 +5,9 @@
 </template>
 
 <script setup lang="ts">
+// Utils
+import { setMeta } from "@/utils/setMeta";
+
 // Graphql query
 import { GET_POST_BY_SLUG } from "@/gql/PostBySlug";
 
@@ -21,8 +24,9 @@ const runtimeConfig = useRuntimeConfig();
 const { t } = useI18n();
 const locale = ref(useI18n().locale);
 
-// Utils
-import { setMeta } from "@/utils/setMeta";
+// Auth/Preview mode
+const user = useStrapiUser();
+const publicationState = user.value ? "PREVIEW" : "LIVE";
 
 ////// Fetch post by slug from strapi :
 
@@ -71,6 +75,7 @@ const handleQuery = async (data: any, error: any) => {
 const { data, error } = await useAsyncQuery<Query>(GET_POST_BY_SLUG, {
   locale: locale.value,
   slug: route.params.slug,
+  publicationState: publicationState,
 });
 handleQuery(data, error);
 
@@ -81,6 +86,7 @@ watch(
     const { data, error } = await useAsyncQuery<Query>(GET_POST_BY_SLUG, {
       locale: locale.value,
       slug: route.params.slug,
+      publicationState: publicationState,
     });
     handleQuery(data, error);
   }
