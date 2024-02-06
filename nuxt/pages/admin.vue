@@ -20,7 +20,7 @@
     v-if="!user"
     class="flex-1 w-full mt-4 flex flex-col items-center justify-center"
   >
-    <h1 class="p-2 text-lg font-semibold">Enter preview mode</h1>
+    <h1 class="p-2 text-lg font-semibold">Enter preview mode :</h1>
     <UForm
       :state="state"
       class="w-full max-w-lg flex flex-col items-center gap-6"
