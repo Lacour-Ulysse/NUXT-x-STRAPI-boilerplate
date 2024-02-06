@@ -1,8 +1,16 @@
 import gql from "graphql-tag";
 
 export const GET_STRAPI_PAGE = gql`
-  query ($locale: I18NLocaleCode!, $slug: String!) {
-    pages(locale: $locale, filters: { slug: { eq: $slug } }) {
+  query (
+    $locale: I18NLocaleCode!
+    $slug: String!
+    $publicationState: PublicationState
+  ) {
+    pages(
+      locale: $locale
+      filters: { slug: { eq: $slug } }
+      publicationState: $publicationState
+    ) {
       data {
         id
         attributes {
@@ -52,27 +60,6 @@ export const GET_STRAPI_PAGE = gql`
                   width
                   height
                 }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const GET_TRANSLATION = gql`
-  query ($locale: I18NLocaleCode!, $slug: String!, $translation: String!) {
-    pages(locale: $locale, filters: { slug: { eq: $slug } }) {
-      data {
-        id
-        attributes {
-          slug
-          localizations(filters: { locale: { eq: $translation } }) {
-            data {
-              id
-              attributes {
-                slug
               }
             }
           }

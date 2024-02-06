@@ -22,6 +22,10 @@ Comes with tailwind, color-mode and nuxt-icon librairy.
 
 Helper functions and Composables.
 
+### `nuxtjs/strapi` : [HERE](https://vueuse.org/)
+
+Used only for authentication for now. All drafts content types can be seen if connected.
+
 ### `Vitest`
 
 To test the application we use vitest : **[Documentation](https://vitest.dev/guide/)**
