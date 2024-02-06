@@ -1,5 +1,5 @@
 <template>
-  <section class="text-and-media">
+  <!-- <section class="text-and-media">
     <h2 v-if="blockData.title">{{ blockData.title }}</h2>
     <div
       :class="[
@@ -36,7 +36,7 @@
         <Richtext v-if="blockData.text" :rich-text="blockData.text" />
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <style lang="scss">
