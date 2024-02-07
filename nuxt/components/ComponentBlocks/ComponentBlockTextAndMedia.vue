@@ -23,8 +23,12 @@
             ],
           }"
         /> -->
+        <VideoPlayer
+          v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
+          :videoUrl="strapiURL + blockData.media?.data?.attributes?.url"
+        />
         <NuxtImg
-          v-if="blockData.media?.data?.attributes?.url"
+          v-else-if="blockData.media?.data?.attributes?.url"
           loading="lazy"
           sizes="sm:600px md:800px lg:100vw"
           :src="`${blockData.media.data.attributes?.url}`"
