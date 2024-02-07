@@ -1,7 +1,7 @@
 <!-- Video.js player -->
 <!-- Not working server side -->
 <template>
-  <ClientOnly><video ref="videoPlayer" class="video-js"></video></ClientOnly>
+  <video ref="videoPlayer" class="video-js"></video>
 </template>
 
 <script>
