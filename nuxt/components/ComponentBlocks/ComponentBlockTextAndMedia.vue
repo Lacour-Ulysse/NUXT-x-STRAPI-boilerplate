@@ -8,7 +8,7 @@
       ]"
     >
       <div class="media">
-        <VideoPlayer
+        <!-- <VideoPlayer
           v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
           :options="{
             fluid: true,
@@ -22,9 +22,9 @@
               },
             ],
           }"
-        />
+        /> -->
         <NuxtImg
-          v-else-if="blockData.media?.data?.attributes?.url"
+          v-if="blockData.media?.data?.attributes?.url"
           loading="lazy"
           sizes="sm:600px md:800px lg:100vw"
           :src="`${blockData.media.data.attributes?.url}`"
@@ -33,7 +33,7 @@
       </div>
 
       <div class="text">
-        <!-- <Richtext v-if="blockData.text" :rich-text="blockData.text" /> -->
+        <Richtext v-if="blockData.text" :rich-text="blockData.text" />
       </div>
     </div>
   </section>
