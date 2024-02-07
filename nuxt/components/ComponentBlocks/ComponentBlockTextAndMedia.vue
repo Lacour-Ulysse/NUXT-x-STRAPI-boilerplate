@@ -7,28 +7,34 @@
         `media--${blockData.media_side ? blockData.media_side : 'left'}`,
       ]"
     >
-      <div class="media">
-        <VideoPlayer
-          v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
-          :options="{
-            fluid: true,
-            autoplay: true,
-            muted: true,
-            controls: true,
-            sources: [
-              {
-                src: strapiURL + blockData.media?.data?.attributes?.url,
-                type: blockData.media?.data?.attributes?.mime,
-              },
-            ],
-          }"
-        />
-        <!-- <VideoPlayer
+      <div
+        v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
+        class="media"
+      >
+        <ClientOnly>
+          <VideoPlayer
+            :options="{
+              fluid: true,
+              autoplay: true,
+              muted: true,
+              controls: true,
+              sources: [
+                {
+                  src: strapiURL + blockData.media?.data?.attributes?.url,
+                  type: blockData.media?.data?.attributes?.mime,
+                },
+              ],
+            }"
+          />
+          <!-- <VideoPlayer
           v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
           :videoUrl="strapiURL + blockData.media?.data?.attributes?.url"
         /> -->
+        </ClientOnly>
+      </div>
+
+      <div v-else-if="blockData.media?.data?.attributes?.url" class="media">
         <NuxtImg
-          v-else-if="blockData.media?.data?.attributes?.url"
           loading="lazy"
           sizes="sm:600px md:800px lg:100vw"
           :src="`${blockData.media.data.attributes?.url}`"
