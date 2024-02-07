@@ -118,7 +118,7 @@ export default defineNuxtConfig({
     provider: "localImageSharp",
   },
 
-  // Hot Module Replacement for Vite
+  // Vite config
   vite: {
     server: {
       hmr: {
@@ -208,6 +208,7 @@ export default defineNuxtConfig({
     },
   },
 
+  // @nuxt/strapi module config :
   strapi: {
     prefix: "/api",
     admin: "/admin",
@@ -215,5 +216,10 @@ export default defineNuxtConfig({
     cookie: {},
     cookieName: "strapi_jwt",
     devtools: true,
+  },
+
+  // Nitro config :
+  nitro: {
+    compressPublicAssets: true,
   },
 });
