@@ -1,5 +1,6 @@
 <!-- Video.js player -->
-<template>
+<!-- Not working server side -->
+<!-- <template>
   <video ref="videoPlayer" class="video-js"></video>
 </template>
 
@@ -32,23 +33,20 @@ export default {
     }
   },
 };
-</script>
+</script> -->
 
 <!-- Basic HTML video player -->
-<!-- <template>
+<template>
   <div>
-    <video controls :src="strapiURL + videoUrl"></video>
+    <video autoplay muted loop :src="videoUrl"></video>
   </div>
 </template>
 
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
-const strapiURL = runtimeConfig.public.STRAPI_SITE_URL;
-
 const props = defineProps({
   videoUrl: {
     type: String,
     required: true,
   },
 });
-</script> -->
+</script>
