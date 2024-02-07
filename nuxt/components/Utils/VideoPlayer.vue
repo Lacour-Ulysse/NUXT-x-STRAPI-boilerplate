@@ -1,7 +1,7 @@
 <!-- Video.js player -->
 <!-- Not working server side -->
-<!-- <template>
-  <video ref="videoPlayer" class="video-js"></video>
+<template>
+  <ClientOnly><video ref="videoPlayer" class="video-js"></video></ClientOnly>
 </template>
 
 <script>
@@ -33,10 +33,10 @@ export default {
     }
   },
 };
-</script> -->
+</script>
 
 <!-- Basic HTML video player -->
-<template>
+<!-- <template>
   <div>
     <video autoplay muted loop :src="videoUrl"></video>
   </div>
@@ -49,4 +49,4 @@ const props = defineProps({
     required: true,
   },
 });
-</script>
+</script> -->

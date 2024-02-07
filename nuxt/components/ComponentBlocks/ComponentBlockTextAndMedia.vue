@@ -8,7 +8,7 @@
       ]"
     >
       <div class="media">
-        <!-- <VideoPlayer
+        <VideoPlayer
           v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
           :options="{
             fluid: true,
@@ -22,11 +22,11 @@
               },
             ],
           }"
-        /> -->
-        <VideoPlayer
+        />
+        <!-- <VideoPlayer
           v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
           :videoUrl="strapiURL + blockData.media?.data?.attributes?.url"
-        />
+        /> -->
         <NuxtImg
           v-else-if="blockData.media?.data?.attributes?.url"
           loading="lazy"
