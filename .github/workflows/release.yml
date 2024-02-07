@@ -71,3 +71,33 @@ jobs:
           version: "${{ steps.split_repo_name.outputs._1 }}@${{ needs.generate_git_tags.outputs.output_new_tag }}"
           sourcemaps: "./strapi/"
           url_prefix: "~"
+
+  generate_sentry_release_NUXT:
+    needs: [generate_git_tags, generate_git_release]
+    name: Nuxt Sentry Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Split Repo Name
+        uses: jungwinter/split@v2
+        id: split_repo_name
+        with:
+          msg: ${{ github.repository }}
+          separator: "/"
+          maxsplit: 1
+      - name: Echo Repo Name
+        run: echo ${{ steps.split_repo_name.outputs._1 }}
+      - name: Sentry Release
+        uses: getsentry/action-release@v1.2.0
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN_NUXT }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT_NUXT }}
+        with:
+          environment: production
+          version: "${{ steps.split_repo_name.outputs._1 }}@${{ needs.generate_git_tags.outputs.output_new_tag }}"
+          sourcemaps: "./nuxt/"
+          url_prefix: "~"
