@@ -208,7 +208,7 @@ export default defineNuxtConfig({
     },
   },
 
-  // @nuxt/strapi module config :
+  // @nuxt/strapi module config (used for auth)
   strapi: {
     prefix: "/api",
     admin: "/admin",
