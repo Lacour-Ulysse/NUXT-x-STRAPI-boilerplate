@@ -26,10 +26,6 @@
               ],
             }"
           />
-          <!-- <VideoPlayer
-          v-if="blockData.media?.data?.attributes?.mime.startsWith('video/')"
-          :videoUrl="strapiURL + blockData.media?.data?.attributes?.url"
-        /> -->
         </ClientOnly>
       </div>
 

@@ -2,7 +2,17 @@
   <section class="gallery-block">
     <h2 v-if="blockData.title">{{ blockData.title }}</h2>
 
-    <carousel :items-to-show="1.25" v-if="blockData.medias">
+    <carousel
+      :items-to-show="1"
+      :wrap-around="true"
+      :breakpoints="{
+        768: {
+          itemsToShow: 1.85,
+          snapAlign: 'center',
+        },
+      }"
+      v-if="blockData.medias"
+    >
       <slide
         v-for="(slide, idx) in blockData.medias.data"
         :key="slide.id ?? idx"
@@ -37,14 +47,8 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss">
-.gallery-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 2rem;
-  padding: 1rem 0;
+<style scoped lang="scss">
+.carousel__pagination {
+  display: none;
 }
 </style>
