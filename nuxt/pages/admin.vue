@@ -18,7 +18,7 @@
   />
   <main
     v-if="!user"
-    class="flex-1 w-full mt-4 flex flex-col items-center justify-center"
+    class="flex-1 w-full flex flex-col items-center justify-center"
   >
     <h1 class="p-2 text-lg font-semibold">Enter preview mode :</h1>
     <UForm

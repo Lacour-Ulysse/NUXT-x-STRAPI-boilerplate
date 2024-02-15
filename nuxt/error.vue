@@ -23,7 +23,7 @@ const handleError = () => {
 
     <!-- Default error page -->
     <main
-      v-else
+      v-else-if="error"
       class="min-h-full flex flex-col gap-5 p-2 justify-center items-center"
     >
       <h1 class="text-2xl">

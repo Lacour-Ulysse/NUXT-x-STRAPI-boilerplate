@@ -1,5 +1,5 @@
 <template>
-  <div v-if="strapiPages?.data" class="flex gap-2">
+  <div v-if="strapiPages?.data" class="flex gap-2 flex-wrap">
     <!-- Nuxt pages -->
     <NuxtLink :to="localPath('/')">Home</NuxtLink>
     <NuxtLink :to="localPath('/posts')">Posts</NuxtLink>

@@ -2,7 +2,7 @@
   <div
     class="flex justify-between items-center px-2 w-full h-24 border-b border-gray-200 dark:border-gray-900"
   >
-    <div>
+    <div class="w-2/12 flex justify-start">
       <NuxtLink to="/">
         <img
           src="@/assets/image/logo.png"
@@ -13,9 +13,10 @@
         />
       </NuxtLink>
     </div>
-    <h1>STRAPI x NUXT</h1>
-    <NavigationMenu />
-    <LanguageSwitcher />
-    <ToggleDarkModeBtn />
+    <div class="w-8/12 flex justify-center"><NavigationMenu /></div>
+
+    <div class="w-2/12 flex justify-end"><LanguageSwitcher /></div>
+
+    <!-- <ToggleDarkModeBtn /> -->
   </div>
 </template>

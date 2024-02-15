@@ -100,7 +100,7 @@ export default defineNuxtConfig({
 
   // Color mode settings
   colorMode: {
-    preference: "system",
+    preference: "light",
   },
 
   // Image configuration
