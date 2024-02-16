@@ -91,6 +91,7 @@ export default defineNuxtConfig({
     "@/assets/scss/main.scss",
     "@/node_modules/video.js/dist/video-js.css",
     "@/node_modules/vue3-carousel/dist/carousel.css",
+    // "@/assets/scss/components/hamburgers/hamburgers.scss",
   ],
 
   // Use all iconify icons with NuxtUI

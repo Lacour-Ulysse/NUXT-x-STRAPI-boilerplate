@@ -1,5 +1,9 @@
 <template>
-  <div v-if="strapiPages?.data" class="flex gap-2 flex-wrap">
+  <div
+    v-if="strapiPages?.data"
+    id="navigation-menu"
+    class="flex gap-2 flex-wrap"
+  >
     <!-- Nuxt pages -->
     <NuxtLink :to="localPath('/')">Home</NuxtLink>
     <NuxtLink :to="localPath('/posts')">Posts</NuxtLink>
@@ -15,7 +19,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 // Graphql query
 import { GET_ALL_PAGES } from "@/gql/AllPages";
 
@@ -61,4 +65,14 @@ watch(
     await fetchStrapiPages();
   }
 );
+</script> -->
+
+<script setup lang="ts">
+const localPath = useLocalePath();
+const props = defineProps({
+  strapiPages: {
+    type: Object as PropType<any>,
+    required: true,
+  },
+});
 </script>

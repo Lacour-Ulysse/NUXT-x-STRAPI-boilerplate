@@ -1,0 +1,59 @@
+header {
+  position: sticky;
+  top: 0;
+
+  #header {
+    position: relative;
+    z-index: 3;
+    @apply bg-white;
+  }
+  #navigation-menu {
+    display: none;
+  }
+  #burger {
+    display: flex;
+  }
+  #mobile-menu {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    will-change: transform opacity;
+    transition:
+      transform 200ms linear,
+      opacity 100ms ease-out;
+    transform: translateY(-100%);
+    opacity: 0;
+
+    &.open {
+      transition:
+        transform 200ms linear,
+        opacity 300ms ease-in;
+      transform: translateY(0%);
+      opacity: 1;
+    }
+
+    #navigation-menu {
+      display: flex;
+    }
+  }
+}
+
+@include screen-md {
+  header {
+    #navigation-menu {
+      display: flex;
+    }
+    #burger {
+      display: none;
+    }
+    #mobile-menu {
+      display: none;
+      &.open {
+        display: none;
+      }
+    }
+  }
+}
