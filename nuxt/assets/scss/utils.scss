@@ -1,7 +1,9 @@
+// Grids
 .grid-layout {
   @apply grid place-items-center;
 }
 
+// Tiptap richtext
 .richtext {
   @apply prose;
   text-align: start;
@@ -34,4 +36,9 @@
   }
 
   /* TODO : headings */
+}
+
+// Pre/Errors
+pre {
+  @apply whitespace-normal;
 }

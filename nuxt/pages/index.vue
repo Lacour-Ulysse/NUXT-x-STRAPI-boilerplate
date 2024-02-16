@@ -1,6 +1,7 @@
 <template>
   <main
     class="grid-layout md:flex-col md:flex-wrap md:justify-center gap-5 p-3"
+    style="height: 3000px"
   >
     <h1><UIcon name="i-uil-home-alt" /></h1>
   </main>

@@ -4,6 +4,7 @@
       v-for="(category, index) in categories?.data"
       :to="localPath(`/category/${category.attributes?.slug}`)"
       target="_self"
+      variant="outline"
     >
       {{ category.attributes?.name }}
     </UButton>

@@ -48,7 +48,7 @@ const handleQuery = (data: any, error: any) => {
       throw error;
     }
 
-    // Get pages data
+    // Get page data
     strapiPage.value = data?.value?.pages?.data[0] as PageEntity;
 
     // Update meta tags
