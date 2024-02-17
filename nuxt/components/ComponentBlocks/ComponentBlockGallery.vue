@@ -1,34 +1,35 @@
 <template>
   <section class="gallery-block">
     <h2 v-if="blockData.title">{{ blockData.title }}</h2>
-
-    <carousel
-      :items-to-show="1"
-      :wrap-around="true"
-      :breakpoints="{
-        768: {
-          itemsToShow: 1.85,
-          snapAlign: 'center',
-        },
-      }"
-      v-if="blockData.medias"
-    >
-      <slide
-        v-for="(slide, idx) in blockData.medias.data"
-        :key="slide.id ?? idx"
+    <ClientOnly>
+      <carousel
+        :items-to-show="1"
+        :wrap-around="true"
+        :breakpoints="{
+          768: {
+            itemsToShow: 1.85,
+            snapAlign: 'center',
+          },
+        }"
+        v-if="blockData.medias"
       >
-        <NuxtImg
-          sizes="sm:600px md:800px lg:100vw"
-          :src="`${slide.attributes?.url}`"
-          :alt="slide.attributes?.alternativeText ?? 'Slider image'"
-        />
-      </slide>
+        <slide
+          v-for="(slide, idx) in blockData.medias.data"
+          :key="slide.id ?? idx"
+        >
+          <NuxtImg
+            sizes="sm:600px md:800px lg:100vw"
+            :src="`${slide.attributes?.url}`"
+            :alt="slide.attributes?.alternativeText ?? 'Slider image'"
+          />
+        </slide>
 
-      <template #addons>
-        <navigation />
-        <pagination />
-      </template>
-    </carousel>
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </carousel>
+    </ClientOnly>
   </section>
 </template>
 
